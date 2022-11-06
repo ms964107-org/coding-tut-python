@@ -1,0 +1,31 @@
+import sys
+sys.path.append('../problems/')
+from valid_parentheses import solution
+
+# test cases
+assert solution("()")
+assert solution("()[]{}")
+assert not solution("(]")
+assert solution("([{}])")
+assert not solution("[(])")
+assert not solution("(")
+assert not solution("[")
+assert not solution("{")
+assert not solution(")")
+assert not solution("]")
+assert not solution("}")
+assert solution("[]")
+assert solution("{}")
+assert solution("({})")
+assert solution("([{({{()}})}])")
+assert solution("(([{}]){()}[({})]{}[({{[]}})])")
+assert not solution("(([{}]){()}[({))]{}[({{[]}})])")
+assert solution("(([{}]){()}[({})]{}[({{[]}})]){}()")
+assert not solution("())")
+assert not solution(")()(")
+assert not solution("(}")
+assert solution("((){}())[{{{{[()]}}}}]{[]}(({})){}[]")
+assert not solution("((){}()){[{{{{[()]}}}}]{[]}(({}})){}[]")
+assert solution("[((((([]((({}((({()((({({({({([[[[[[(){{}}[[()]]]]]]]])})})})})))}))[])))){})))))]")
+# done
+print("ADVANCED TEST PASS")
