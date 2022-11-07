@@ -28,7 +28,7 @@ Below will help you setup this suite. We will heavily using command line interfa
 
     請設定你的名字和電子郵箱，這只是適用於辨識而已，才能確認是誰訪問過或是修改過這邊的程式碼。
 
-4. Download this suite `https://github.com/ms964107/coding-tut-python.git`
+4. Download this suite `git clone https://github.com/ms964107/coding-tut-python.git`
 
     下載這邊所有的程式碼。
 

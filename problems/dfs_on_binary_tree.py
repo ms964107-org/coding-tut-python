@@ -1,7 +1,7 @@
 """
-Tree Traversal
+DFS on Binary Tree: Tree Traversal
 
-給予一個二元樹，請完成前序遍歷、中序遍歷、後序遍歷。
+給予一個二元樹，請完成這些深度優先搜尋：前序遍歷、中序遍歷、後序遍歷。
 
 Constraints
 0 <= Node.val <= 100

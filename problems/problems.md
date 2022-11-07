@@ -16,4 +16,6 @@
     * Merge two sorted lists
     * Remove duplicates from sorted lists
 - Tree
-    * Tree traversal
+    * BFS on Binary Tree
+    * DFS on Binary Tree
+    * Symmetric tree
