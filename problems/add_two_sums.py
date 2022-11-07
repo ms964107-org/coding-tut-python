@@ -25,12 +25,15 @@ Output: [8,9,9,9,0,0,0,1]
 來源：https://leetcode.com/problems/add-two-numbers/
 程度：中等
 """
+import sys
+sys.path.append('../utils/')
+from utils import ListNode
 
 # Node 定義
-class ListNode(object):
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 
 def solution(l1, l2):
     """
@@ -48,27 +51,13 @@ def solution(l1, l2):
 """
 簡單測試
 """
-def list_to_linkedlist(list):
-    head = curr = ListNode()
-    for e in list:
-        curr.next = ListNode(e)
-        curr = curr.next
-    return head.next
-
-def linkedlist_to_list(linkedlist):
-    list = []
-    while linkedlist:
-        list.append(linkedlist.val)
-        linkedlist = linkedlist.next
-    return list
-
-linedlist1 = list_to_linkedlist([2,4,3])
-linedlist2 = list_to_linkedlist([5,6,4])
-assert linkedlist_to_list(solution(linedlist1, linedlist2)) == [7,0,8]
-linedlist1 = list_to_linkedlist([0])
-linedlist2 = list_to_linkedlist([0])
-assert linkedlist_to_list(solution(linedlist1, linedlist2)) == [0]
-linedlist1 = list_to_linkedlist([9,9,9,9,9,9,9])
-linedlist2 = list_to_linkedlist([9,9,9,9])
-assert linkedlist_to_list(solution(linedlist1, linedlist2)) == [8,9,9,9,0,0,0,1]
+linedlist1 = ListNode.list_to_linkedlist([2,4,3])
+linedlist2 = ListNode.list_to_linkedlist([5,6,4])
+assert ListNode.linkedlist_to_list(solution(linedlist1, linedlist2)) == [7,0,8]
+linedlist1 = ListNode.list_to_linkedlist([0])
+linedlist2 = ListNode.list_to_linkedlist([0])
+assert ListNode.linkedlist_to_list(solution(linedlist1, linedlist2)) == [0]
+linedlist1 = ListNode.list_to_linkedlist([9,9,9,9,9,9,9])
+linedlist2 = ListNode.list_to_linkedlist([9,9,9,9])
+assert ListNode.linkedlist_to_list(solution(linedlist1, linedlist2)) == [8,9,9,9,0,0,0,1]
 print("BASIC TEST PASS")

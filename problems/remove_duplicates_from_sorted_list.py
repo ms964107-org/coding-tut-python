@@ -20,40 +20,32 @@ Output: [1,2,3]
 來源：https://leetcode.com/problems/remove-duplicates-from-sorted-list/
 程度：簡單
 """
+import sys
+sys.path.append('../utils/')
+from utils import ListNode
 
 # Node 定義
-class ListNode(object):
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 
 def solution(head):
     """
     :type head: ListNode
     :rtype: ListNode
     """
+    # 你的程式碼寫在這
 
+
+    ###############
 
 #####################################
 """
 簡單測試
 """
-def list_to_linkedlist(list):
-    head = curr = ListNode()
-    for e in list:
-        curr.next = ListNode(e)
-        curr = curr.next
-    return head.next
-
-def linkedlist_to_list(linkedlist):
-    list = []
-    while linkedlist:
-        list.append(linkedlist.val)
-        linkedlist = linkedlist.next
-    return list
-
-linkedlist = list_to_linkedlist([1,1,2])
-assert linkedlist_to_list(solution(linkedlist)) == [1,2]
-linkedlist = list_to_linkedlist([1,1,2,3,3])
-assert linkedlist_to_list(solution(linkedlist)) == [1,2,3]
+linkedlist = ListNode.list_to_linkedlist([1,1,2])
+assert ListNode.linkedlist_to_list(solution(linkedlist)) == [1,2]
+linkedlist = ListNode.list_to_linkedlist([1,1,2,3,3])
+assert ListNode.linkedlist_to_list(solution(linkedlist)) == [1,2,3]
 print("BASIC TEST PASS")

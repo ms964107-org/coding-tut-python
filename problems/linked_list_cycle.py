@@ -32,36 +32,31 @@ Output: false
 來源：https://leetcode.com/problems/linked-list-cycle/
 程度：簡單
 """
+import sys
+sys.path.append('../utils/')
+from utils import ListNode
 
 # Node 定義
-class ListNode(object):
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 
 def solution(head):
     """
     :type head: ListNode
     :rtype: ListNode
     """
+    # 你的程式碼寫在這
 
+
+    ###############
 
 #####################################
 """
 簡單測試
 """
-def list_to_linkedlist_with_cycle(list, pos):
-    head = curr = ListNode()
-    loop = None
-    for i, e in enumerate(list):
-        curr.next = ListNode(e)
-        curr = curr.next
-        if (i == pos):
-            loop = curr
-    curr.next = loop
-    return head.next
-
-assert solution(list_to_linkedlist_with_cycle([3,2,0,-4], 1))
-assert solution(list_to_linkedlist_with_cycle([1,2], 0))
-assert not solution(list_to_linkedlist_with_cycle([1,2,3,4], None))
+assert solution(ListNode.list_to_linkedlist_with_cycle([3,2,0,-4], 1))
+assert solution(ListNode.list_to_linkedlist_with_cycle([1,2], 0))
+assert not solution(ListNode.list_to_linkedlist_with_cycle([1,2,3,4], None))
 print("BASIC TEST PASS")

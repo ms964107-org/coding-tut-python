@@ -24,12 +24,15 @@ Output: [0]
 來源：https://leetcode.com/problems/merge-two-sorted-lists/
 程度：簡單
 """
+import sys
+sys.path.append('../utils/')
+from utils import ListNode
 
 # Node 定義
-class ListNode(object):
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 
 def solution(list1, list2):
     """
@@ -37,33 +40,22 @@ def solution(list1, list2):
     :type list2: Optional[ListNode]
     :rtype: Optional[ListNode]
     """
+    # 你的程式碼寫在這
 
+
+    ###############
 
 #####################################
 """
 簡單測試
 """
-def list_to_linkedlist(list):
-    head = curr = ListNode()
-    for e in list:
-        curr.next = ListNode(e)
-        curr = curr.next
-    return head.next
-
-def linkedlist_to_list(linkedlist):
-    list = []
-    while linkedlist:
-        list.append(linkedlist.val)
-        linkedlist = linkedlist.next
-    return list
-
-linedlist1 = list_to_linkedlist([1,2,4])
-linedlist2 = list_to_linkedlist([1,3,4])
-assert linkedlist_to_list(solution(linedlist1, linedlist2)) == [1,1,2,3,4,4]
-linedlist1 = list_to_linkedlist([])
-linedlist2 = list_to_linkedlist([])
-assert linkedlist_to_list(solution(linedlist1, linedlist2)) == []
-linedlist1 = list_to_linkedlist([])
-linedlist2 = list_to_linkedlist([0])
-assert linkedlist_to_list(solution(linedlist1, linedlist2)) == [0]
+linedlist1 = ListNode.list_to_linkedlist([1,2,4])
+linedlist2 = ListNode.list_to_linkedlist([1,3,4])
+assert ListNode.linkedlist_to_list(solution(linedlist1, linedlist2)) == [1,1,2,3,4,4]
+linedlist1 = ListNode.list_to_linkedlist([])
+linedlist2 = ListNode.list_to_linkedlist([])
+assert ListNode.linkedlist_to_list(solution(linedlist1, linedlist2)) == []
+linedlist1 = ListNode.list_to_linkedlist([])
+linedlist2 = ListNode.list_to_linkedlist([0])
+assert ListNode.linkedlist_to_list(solution(linedlist1, linedlist2)) == [0]
 print("BASIC TEST PASS")

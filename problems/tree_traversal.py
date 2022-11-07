@@ -20,13 +20,16 @@ Output: pre order traversal: [1, 2, 4, 3, 5, 6]
 來源：https://leetcode.com/problems/binary-tree-inorder-traversal/
 程度：簡單
 """
+import sys
+sys.path.append('../utils/')
+from utils import TreeNode
 
 # Tree 定義
-class TreeNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
         
 def pre_order_traversal(root):
     """
@@ -63,25 +66,15 @@ def post_order_traversal(root):
 """
 簡單測試
 """
-def build_tree(list, index):
-    parent = None
-    if index < len(list):
-        if list[index] == None:
-            return
-        parent = TreeNode(list[index])
-        parent.left = build_tree(list, 2 * index + 1)
-        parent.right = build_tree(list, 2 * index + 2)
-    return parent
-
-q = build_tree([1,2,3,None,4,5,6], 0)
+q = TreeNode.build_tree([1,2,3,None,4,5,6], 0)
 assert pre_order_traversal(q) == [1, 2, 4, 3, 5, 6]
 assert in_order_traversal(q) == [2, 4, 1, 5, 3, 6]
 assert post_order_traversal(q) == [4, 2, 5, 6, 3, 1]
-q = build_tree([1, 2, 3, 4, 5, None, 6], 0)
+q = TreeNode.build_tree([1, 2, 3, 4, 5, None, 6], 0)
 assert pre_order_traversal(q) == [1, 2, 4, 5, 3, 6]
 assert in_order_traversal(q) == [4, 2, 5, 1, 3, 6]
 assert post_order_traversal(q) == [4, 5, 2, 6, 3, 1]
-q = build_tree([4, 6, 2, None, 5, 1, 9, 2, 1, 3, 4, None, 7], 0)
+q = TreeNode.build_tree([4, 6, 2, None, 5, 1, 9, 2, 1, 3, 4, None, 7], 0)
 assert pre_order_traversal(q) == [4, 6, 5, 3, 4, 2, 1, 7, 9]
 assert in_order_traversal(q) == [6, 3, 5, 4, 4, 1, 7, 2, 9]
 assert post_order_traversal(q) == [3, 4, 5, 6, 7, 1, 9, 2, 4]
