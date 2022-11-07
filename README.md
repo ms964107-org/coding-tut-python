@@ -6,6 +6,7 @@ Python questions for beginners
     ├── problems                     	# Problems and basic tests
     ├── tests                     		# Advanced tests
     ├── utils                     		# Utilities
+    ├── updates                     	# Patch notes
     └── README.md
 
 # Setup Process 安裝過程
