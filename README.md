@@ -6,7 +6,6 @@ Python questions for beginners
     ├── problems                     	# Problems and basic tests
     ├── tests                     		# Advanced tests
     ├── utils                     		# Utilities
-    ├── updates                     	# Patch notes
     └── README.md
 
 # Setup Process 安裝過程
@@ -87,9 +86,9 @@ Below will help you setup this suite. We will heavily using command line interfa
     列出當前資料夾裡所有的檔案及資料夾
 
 # Note
-- Advance tests will not be updated in awhile. We will provide more basic tests to ensure your solution is correct.
+- Advance tests will be slowly updated.
 
-    進階tests目前不會繼續更新，我們會給予更多基礎tests確保算法的正確性。
+    進階tests目前會以緩慢速度繼續更新。
 
 # Resources
 [Leetcode](https://leetcode.com/problemset/all/)
