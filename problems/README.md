@@ -16,11 +16,10 @@
     * Merge two sorted lists
     * Remove duplicates from sorted lists
 - Trees
-    * BFS on binary tree
-    * DFS on binary tree
-    * Invert binary tree
-    * Merge two binary tree
-    * Number of islands
-    * Symmetric tree
+    * BFS on binary tree - new
+    * DFS on binary tree - new
+    * Invert binary tree - new
+    * Merge two binary tree - new
+    * Symmetric tree - new
 - Graphs
-    * Number of islands
+    * Number of islands - new
