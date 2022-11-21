@@ -71,9 +71,9 @@ def solution(root):
                 travelsal(root.left, list2)
     travelsal(root, list2)
     list22 = []
-    r = list1.index(4)
+    r = list1.index(curr.val)
     for l in range(0, r):
-      list22.append(list2[i])
+      list22.append(list2[l])
 
     if list11 == list22:
       return True
