@@ -46,6 +46,38 @@ def solution(root):
     :rtype: List[int]
     """
     # 你的程式碼寫在這
+    list1 = []
+    curr = root
+    def inorderleft (root, list1):
+        if root != None:
+            if root.left != None:
+                inorderleft(root.left, list1)
+            list1.append(root.val)
+            if root.right != None:
+                inorderleft(root.right, list1)
+    inorderleft(root, list1)
+    r = list1.index(curr.val)
+    list11 = []
+    for i in range(0, r):
+      list11.append(list1[i])
+      
+    list2 = []
+    def travelsal (root, list2):
+        if root != None:
+            if root.right != None:
+                travelsal(root.right, list2)
+            list2.append(root.val)
+            if root.left != None:
+                travelsal(root.left, list2)
+    travelsal(root, list2)
+    list22 = []
+    r = list1.index(4)
+    for l in range(0, r):
+      list22.append(list2[i])
+    
+    if list11 == list22:
+      return True
+    return False
 
 
     ###############
