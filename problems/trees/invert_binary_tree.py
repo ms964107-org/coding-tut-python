@@ -57,6 +57,21 @@ def solution(root):
     :rtype: TreeNode
     """
     # 你的程式碼寫在這
+     t2 = TreeNode()
+     t1 = root
+     if t1 != None:
+          t2.val = t1.val
+     def traversal(t1, t2):
+          if t1 != None:
+               if t1.left != None:
+                    traversal(t1.left, t2.right)
+                    t2.val = t1.val
+               if t1.right != None:
+                    traversal(t1.right, t2.left)
+          traversal(t1, t2)
+     return t2
+          
+               
 
 
     ###############
