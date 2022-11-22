@@ -44,7 +44,20 @@ def solution(t1, t2):
     :type root2: TreeNode
     :rtype: TreeNode
     """
+      t3 = TreeNode
     # 你的程式碼寫在這
+    t3 = TreeNode()
+    def traversal(t1,t2,t3):
+      if t1 != None and t2 != None:
+        if t1.left != None and t2.left != None:
+          t3.val = t1.val + t2.val
+          traversal(t1.left, t2.left, t3.left)
+        if t1.right != None and t2.right != None:
+          traversal(t1.right, t2.right, t3.right)
+      traversal(t1,t2,t3)
+    return t3
+
+"""
       list1 = []
       list2 = []
       list3 = []
@@ -70,6 +83,7 @@ def solution(t1, t2):
                         travelsal2(t2.right, list2)
             travelsal2(t2, list2)
       return t2
+    """
     ###############
 
 #####################################
