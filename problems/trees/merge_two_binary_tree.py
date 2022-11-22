@@ -53,21 +53,21 @@ def solution(t1, t2):
             if t1 != None:
                   if t1.left != None:
                         travelsal(t1.left, list1)
-                        list1.append(root.val)
-                  if root.right != None:
-                        travelsal(t1t.right, list1)
+                        list1.append(t1.val)
+                  if t1.right != None:
+                        travelsal(t1.right, list1)
             travelsal(t1, list1)
-           
+            
+      num = 0
       def travelsal2 (t2, list2):
-            num = 0
             if t2 != None:
                   if t2.left != None:
                         travelsal2(t2.left, list2)
                         list2.append(t2.val+list1[num])
                         num+=1
-                  if root.right != None:
+                  if t2.right != None:
                         travelsal2(t2.right, list2)
-            travelsal(t2, list2)
+            travelsal2(t2, list2)
       return list2
     ###############
 
