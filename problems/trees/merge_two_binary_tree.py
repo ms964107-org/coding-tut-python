@@ -63,12 +63,13 @@ def solution(t1, t2):
             if t2 != None:
                   if t2.left != None:
                         travelsal2(t2.left, list2)
+                        t2.val += list1[num]
                         list2.append(t2.val+list1[num])
                         num+=1
                   if t2.right != None:
                         travelsal2(t2.right, list2)
             travelsal2(t2, list2)
-      return list2
+      return t2
     ###############
 
 #####################################
