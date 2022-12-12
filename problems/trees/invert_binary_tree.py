@@ -52,25 +52,32 @@ from invert_binary_tree_test import advanced_tests
 #         self.right = None
     
 def solution(root):
-    """
-    :type root: TreeNode
-    :rtype: TreeNode
-    """
-    # 你的程式碼寫在這
-     t2 = TreeNode()
      t1 = root
+     t2 = TreeNode(object)
      if t1 != None:
           t2.val = t1.val
+     else:
+          return root
      def traversal(t1, t2):
           if t1 != None:
                if t1.left != None:
+                    t2.right = TreeNode(object)
+                    t2.right.val = t1.left.val
+                    print("t2.right", t2.right.val)
+                    print("t1.left", t1.left.val)
                     traversal(t1.left, t2.right)
-                    t2.val = t1.val
                if t1.right != None:
+                    t2.left = TreeNode(object)
+                    t2.left.val = t1.right.val
+                    print("t2.left", t2.left.val)
+                    print("t1.right", t1.right.val)
                     traversal(t1.right, t2.left)
-          traversal(t1, t2)
+                    
+     traversal(t1, t2)
      return t2
-          
+
+    # 你的程式碼寫在這
+
                
 
 

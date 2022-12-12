@@ -70,6 +70,7 @@ def solution(root):
             if root.left != None:
                 travelsal(root.left, list2)
     travelsal(root, list2)
+    
     list22 = []
     r = list1.index(curr.val)
     for l in range(0, r):

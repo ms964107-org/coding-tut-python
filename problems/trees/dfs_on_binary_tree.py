@@ -39,6 +39,17 @@ def pre_order_traversal(root):
     """
     # 你的程式碼寫在這
 
+    list1 = []
+    def travelsal (root, list1):
+        if root != None:
+            list1.append(root.val)
+            if root.left != None:
+                travelsal(root.left, list1)
+            if root.right != None:
+                travelsal(root.right, list1)
+    travelsal(root, list1)
+    return list1
+
 
     ###############
     
@@ -48,6 +59,18 @@ def in_order_traversal(root):
     :rtype: List[int]
     """
     # 你的程式碼寫在這
+    # 往左dfs
+    list1 = []
+    def travelsal (root, list1):
+        if root != None:
+            if root.left != None:
+                travelsal(root.left, list1)
+            list1.append(root.val)
+            if root.right != None:
+                travelsal(root.right, list1)
+    travelsal(root, list1)
+    return list1
+
 
 
     ###############
@@ -58,6 +81,16 @@ def post_order_traversal(root):
     :rtype: List[int]
     """
     # 你的程式碼寫在這
+    list1 = []
+    def travelsal (root, list1):
+        if root != None:
+            if root.left != None:
+                travelsal(root.left, list1)
+            if root.right != None:
+                travelsal(root.right, list1)
+            list1.append(root.val)
+    travelsal(root, list1)
+    return list1
 
 
     ###############

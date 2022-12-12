@@ -32,58 +32,60 @@ from utils import TreeNode
 from merge_two_binary_tree_test import advanced_tests
 
 # Tree 定義
-# class TreeNode(object):
+#class TreeNode(object):
 #     def __init__(self, x):
 #         self.val = x
 #         self.left = None
 #         self.right = None
     
 def solution(t1, t2):
-    """
-    :type root1: TreeNode
-    :type root2: TreeNode
-    :rtype: TreeNode
-    """
-      t3 = TreeNode
-    # 你的程式碼寫在這
-    t3 = TreeNode()
-    def traversal(t1,t2,t3):
-      if t1 != None and t2 != None:
-        if t1.left != None and t2.left != None:
-          t3.val = t1.val + t2.val
-          traversal(t1.left, t2.left, t3.left)
-        if t1.right != None and t2.right != None:
-          traversal(t1.right, t2.right, t3.right)
-      traversal(t1,t2,t3)
-    return t3
+      r1 = t1
+      r2 = t2
+      r3 = TreeNode(object)
+      r3.val = r1.val + r2.val
+      def traversal(r1,r2,r3):
+            if r1.left != None or r2.left != None:
+                  r3.left = TreeNode(object)
+                  if r1.left == None:
+                        r1.left = TreeNode(object)
+                        r3.left.val = r2.left.val
+                  elif r2.left == None:
+                        r2.left = TreeNode(object)
+                        r3.left.val = r1.left.val
+                  elif r1.left != None and r2.left != None:
+                        r3.left.val = r1.left.val + r2.left.val
+                  traversal(r1.left, r2.left, r3.left)
+            if r1.right != None or r2.right != None:
+                  r3.right = TreeNode(object)
+                  if r1.right == None:
+                        r1.right = TreeNode(object)
+                        r3.right.val = r2.right.val
+                  elif r2.right ==  None:
+                        r2.right = TreeNode(object)
+                        r3.right.val = t1.right.val
+                  elif r1.right != None and r2.right != None:
+                        r3.right.val = r1.right.val + r2.right.val
+                  traversal(r1.right, r2.right, r3.right)
+      traversal(r1,r2,r3)
 
-"""
-      list1 = []
-      list2 = []
-      list3 = []
-      curr = t1
-      def travelsal (t1, list1):
-            if t1 != None:
-                  if t1.left != None:
-                        travelsal(t1.left, list1)
-                        list1.append(t1.val)
-                  if t1.right != None:
-                        travelsal(t1.right, list1)
-            travelsal(t1, list1)
-            
-      num = 0
-      def travelsal2 (t2, list2):
-            if t2 != None:
-                  if t2.left != None:
-                        travelsal2(t2.left, list2)
-                        t2.val += list1[num]
-                        list2.append(t2.val+list1[num])
-                        num+=1
-                  if t2.right != None:
-                        travelsal2(t2.right, list2)
-            travelsal2(t2, list2)
-      return t2
-    """
+      import queue
+      def bfs(root):
+            q = queue.Queue()
+            result = []
+            q.put(root)
+            while q.qsize() >0:
+                  node = q.get()
+                  result.append(node.val)
+                  if node.left != None:
+                        q.put(node.left)
+                  if node.right != None:
+                        q.put(node.right)
+            return result
+      print("r1",bfs(r1))
+      print("r2",bfs(r2))
+      print("r3",bfs(r3))    
+      return r3
+
     ###############
 
 #####################################
