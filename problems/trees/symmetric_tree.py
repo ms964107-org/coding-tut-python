@@ -39,12 +39,26 @@ from symmetric_tree_test import advanced_tests
 #         self.val = x
 #         self.left = None
 #         self.right = None
-    
+
+
 def solution(root):
     """
     :type root: TreeNode
     :rtype: bool
     """
+    import queue
+    def bfs(r):
+      q = queue.Queue()
+      result = []
+      q.put(r)
+      while q.qsize() >0:
+            node = q.get()
+            result.append(node.val)
+            if node.left != None:
+                  q.put(node.left)
+            if node.right != None:
+                  q.put(node.right)
+      return result
     # 你的程式碼寫在這
     list1 = []
     curr = root
@@ -56,13 +70,14 @@ def solution(root):
             if root.right != None:
                 inorderleft(root.right, list1)
     inorderleft(root, list1)
+
     r = list1.index(curr.val)
     list11 = []
     for i in range(0, r):
       list11.append(list1[i])
 
     list2 = []
-    def travelsal (root, list2):
+    def travelsal (root, list2):    #inorderright
         if root != None:
             if root.right != None:
                 travelsal(root.right, list2)
@@ -76,9 +91,21 @@ def solution(root):
     for l in range(0, r):
       list22.append(list2[l])
 
+
+    #Check
+    print("list11",list11)
+    for a in list11:
+      print("type:", a,type(a))
+    print("list22",list22)
+    for b in list22:
+      print("type:", b,type(b))
+
     if list11 == list22:
       return True
     return False
+    
+    
+
 
 
     ###############
@@ -93,3 +120,22 @@ q = TreeNode.build_tree([1,2,2,None,3,None,3], 0)
 assert not solution(q)
 print("BASIC TEST PASS")
 advanced_tests(solution)
+
+
+
+
+"""
+import queue
+def bfs(r):
+      q = queue.Queue()
+      result = []
+      q.put(r)
+      while q.qsize() >0:
+            node = q.get()
+            result.append(node.val)
+            if node.left != None:
+                  q.put(node.left)
+            if node.right != None:
+                  q.put(node.right)
+      return result
+"""

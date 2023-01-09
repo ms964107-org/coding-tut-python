@@ -41,28 +41,27 @@ from merge_two_binary_tree_test import advanced_tests
 def solution(t1, t2):
       r1 = t1
       r2 = t2
-      r3 = TreeNode(object)
-      r3.val = r1.val + r2.val
+      r3 = TreeNode(r1.val + r2.val)
       def traversal(r1,r2,r3):
             if r1.left != None or r2.left != None:
-                  r3.left = TreeNode(object)
+                  r3.left = TreeNode(0)
                   if r1.left == None:
-                        r1.left = TreeNode(object)
+                        r1.left = TreeNode(0)
                         r3.left.val = r2.left.val
                   elif r2.left == None:
-                        r2.left = TreeNode(object)
+                        r2.left = TreeNode(0)
                         r3.left.val = r1.left.val
                   elif r1.left != None and r2.left != None:
                         r3.left.val = r1.left.val + r2.left.val
                   traversal(r1.left, r2.left, r3.left)
             if r1.right != None or r2.right != None:
-                  r3.right = TreeNode(object)
+                  r3.right = TreeNode(0)
                   if r1.right == None:
-                        r1.right = TreeNode(object)
+                        r1.right = TreeNode(0)
                         r3.right.val = r2.right.val
                   elif r2.right ==  None:
-                        r2.right = TreeNode(object)
-                        r3.right.val = t1.right.val
+                        r2.right = TreeNode(0)
+                        r3.right.val = r1.right.val
                   elif r1.right != None and r2.right != None:
                         r3.right.val = r1.right.val + r2.right.val
                   traversal(r1.right, r2.right, r3.right)

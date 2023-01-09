@@ -59,21 +59,39 @@ def solution(root):
      else:
           return root
      def traversal(t1, t2):
+          l = []
           if t1 != None:
                if t1.left != None:
                     t2.right = TreeNode(object)
                     t2.right.val = t1.left.val
-                    print("t2.right", t2.right.val)
-                    print("t1.left", t1.left.val)
+                    print("t2.right", t2.right.val)         #
+                    print("t1.left", t1.left.val)           #
                     traversal(t1.left, t2.right)
                if t1.right != None:
                     t2.left = TreeNode(object)
                     t2.left.val = t1.right.val
-                    print("t2.left", t2.left.val)
-                    print("t1.right", t1.right.val)
+                    print("t2.left", t2.left.val)           #
+                    print("t1.right", t1.right.val)         #
                     traversal(t1.right, t2.left)
                     
      traversal(t1, t2)
+
+     import queue
+     def bfs(root):
+            q = queue.Queue()
+            result = []
+            q.put(root)
+            while q.qsize() >0:
+                  node = q.get()
+                  result.append(node.val)
+                  if node.left != None:
+                        q.put(node.left)
+                  if node.right != None:
+                        q.put(node.right)
+            return result
+     print("t1",bfs(t1))
+     print("t2",bfs(t1))
+     #bfs("t2", t2)
      return t2
 
     # 你的程式碼寫在這
