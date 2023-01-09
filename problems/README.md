@@ -3,9 +3,12 @@
     * Two sums
     * Backspace string compare
     * Counting alphabets
+    * Isomorphic strings - new
     * Length of last word
+    * Longest substring without repeating characters - new
     * Palindrome number
     * Queue to stack
+    * Roman to integer - new
     * Stack to queue
     * Valid anagram
     * Valid parentheses
@@ -16,10 +19,12 @@
     * Merge two sorted lists
     * Remove duplicates from sorted lists
 - Trees
-    * BFS on binary tree - new
-    * DFS on binary tree - new
-    * Invert binary tree - new
-    * Merge two binary tree - new
-    * Symmetric tree - new
+    * BFS on binary tree
+    * DFS on binary tree
+    * Invert binary tree
+    * Merge two binary tree
+    * Symmetric tree
 - Graphs
-    * Number of islands - new
+    * Course schedule - new
+    * Find if path exists in graph - new
+    * Number of islands

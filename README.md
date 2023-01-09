@@ -14,9 +14,17 @@ Below will help you setup this suite. We will heavily using command line interfa
 請根據以下步驟安裝git，我們會大量使用終端機。
 ## First time setup 第一次安裝
 1. download git 下載git
-    * MacOS: You should have git installed already. If not, download Xcode Command Line Tools. You can also download Xcode in AppStore, which should include all the tools you need.
+    * MacOS: You should have git installed already. If not, download Xcode Command Line Tools. You can also download Xcode in AppStore, which should include all the tools you need. Or you can install [git](https://formulae.brew.sh/formula/git) via [homebrew](https://brew.sh/).
+    
+    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;TLDR, do
 
-    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;MacOS用戶應該會有git了，沒有的話請到AppStore下載Xcode。
+    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+
+    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;then
+
+    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;`brew install git`
+
+    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;MacOS用戶應該會有git了，沒有的話請到AppStore下載Xcode。或是利用 Homebrew 來下載 git。
     * Windows: https://git-scm.com/download/win
 
 2. Check git version by using `git --version` in your terminal
@@ -27,7 +35,7 @@ Below will help you setup this suite. We will heavily using command line interfa
 
     請設定你的名字和電子郵箱，這只是適用於辨識而已，才能確認是誰訪問過或是修改過這邊的程式碼。
 
-4. Download this suite `git clone https://github.com/ms964107/coding-tut-python.git`
+4. Download this suite `git clone https://github.com/ms964107-org/coding-tut-python.git`
 
     下載這邊所有的程式碼。
 
@@ -86,9 +94,7 @@ Below will help you setup this suite. We will heavily using command line interfa
     列出當前資料夾裡所有的檔案及資料夾
 
 # Note
-- Advance tests will be slowly updated.
 
-    進階tests目前會以緩慢速度繼續更新。
 
 # Resources
 [Leetcode](https://leetcode.com/problemset/all/)

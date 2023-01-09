@@ -60,3 +60,24 @@ class Test(object):
             print("ADVANCED TEST FAIL :(")
         else:
             print("ADVANCED TEST PASS :)")
+
+    def number_generator(start, end, shouldBeString=False):
+        from random import randrange
+        rand = randrange(start, end)
+        if (shouldBeString):
+            return str(rand)
+        return rand
+    
+    def string_generator(length, shouldBeAbsolute=False, shouldHaveSpace=False):
+        from random import randrange, choice
+        char = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        if (shouldHaveSpace):
+            char += ' ' 
+        
+        if (not shouldBeAbsolute):
+            length = randrange(1, length + 1)
+            
+        new_char = ''
+        for _ in range(length):
+            new_char += choice(char)
+        return new_char
